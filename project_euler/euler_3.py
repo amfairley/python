@@ -1,14 +1,27 @@
 # Largest prime factor of 600851475143
+def main():
 
-# Factors of 600851475143
-factors = []
-target = 100012
-for i in range(1,target):
-    if target % i == 0:
-        factors.append(i)
+    factors = []
+    prime_factors = []
+    target = 600851475143
 
-# Function to determine if a value is prime
+    # Factors of 600851475143
+    for i in range(1,target):
+        if target % i == 0:
+            factors.append(i)
+    
+        
+    # Prime factors
+    for i in factors:
+        if is_prime(i):
+            prime_factors.append(i)
+
+    print(max(prime_factors))
+
+# Functions:
+
 def is_prime(x):
+    """A simple function that determines whether an input integer is prime or not"""
     factor_list = []
     for i in range (1,x):
         if x % i == 0:
@@ -18,13 +31,9 @@ def is_prime(x):
     else:
         return False
 
-prime_factors = []
-# For each value in the factors list
-for i in factors:
-    if is_prime(i):
-        prime_factors.append(i)
+if __name__ == "__main__":
+    main()
 
-print(max(prime_factors))
 
 
 
